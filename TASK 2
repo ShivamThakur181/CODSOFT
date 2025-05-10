@@ -1,0 +1,35 @@
+Design a simple calculator with basic arithmetic operations.
+Prompt the user to input two numbers and an operation choice.
+
+Perform the calculation and display the result.
+
+def calculator():
+    print("Simple Calculator")
+    print("Operations: "+"+ Add, - Subtract, * Multiply, / Divide")
+
+    try:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        operation = input("Choose an operation (+, -, *, /): ")
+
+        if operation == "+":
+            result = num1 + num2
+        elif operation == "-":
+            result = num1 - num2
+        elif operation == "*":
+            result = num1 * num2
+        elif operation == "/":
+            if num2 != 0:
+                result = num1 / num2
+            else:
+                print("Error: Division by zero!")
+                return
+        else:
+            print("Invalid operation!")
+            return
+
+        print(f"Result: {num1} {operation} {num2} = {result}")
+    except ValueError:
+        print("Invalid input! Please enter numbers.")
+
+calculator()
